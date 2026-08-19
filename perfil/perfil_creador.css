@@ -1,0 +1,246 @@
+/* ==========================================
+   ESTILOS PERFIL PÚBLICO DEL CREADOR
+   ========================================== */
+
+body {
+    background-color: #0d0a12 !important;
+    color: #ffffff;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.perfil-publico-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px 60px 20px;
+}
+
+/* BANNER DE PORTADA */
+.banner-header {
+    width: 100%;
+    height: 220px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #1f122e 0%, #0d0a12 100%);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin-top: 20px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* HEADER DEL CREADOR */
+.creador-info-card {
+    display: flex;
+    align-items: flex-end;
+    gap: 25px;
+    margin-top: -60px;
+    padding: 0 30px;
+    position: relative;
+    z-index: 10;
+}
+
+/* AVATAR DE PERFIL CIRCULAR Y CONTROLADO */
+.avatar-box {
+    width: 130px;
+    height: 130px;
+    min-width: 130px;
+    min-height: 130px;
+    border-radius: 50%;
+    border: 4px solid #0d0a12;
+    overflow: hidden;
+    background-color: #1a1a24;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.avatar-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* DATOS Y TEXTOS */
+.creador-detalles {
+    padding-bottom: 10px;
+}
+
+.saludo-tag {
+    color: #d4af37;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.nombre-tienda-titulo {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nombre-tienda-titulo span {
+    color: #d4af37;
+}
+
+.bio-texto {
+    color: #a0a0b0;
+    font-size: 0.95rem;
+    margin-top: 8px;
+    max-width: 650px;
+    line-height: 1.4;
+}
+
+/* SECCIÓN Y TARJETAS DE OBRAS */
+.seccion-obras-header {
+    margin-top: 50px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.seccion-obras-header h2 {
+    font-size: 1.5rem;
+    color: #d4af37;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card-producto {
+    background-color: #14101d;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 15px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-producto:hover {
+    transform: translateY(-5px);
+    border-color: rgba(212, 175, 55, 0.4);
+}
+
+.card-img-box {
+    width: 100%;
+    height: 180px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 12px;
+    background-color: #08080c;
+}
+
+.card-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-producto h3 {
+    font-size: 1rem;
+    margin: 0 0 8px 0;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-producto .precio-tag {
+    color: #d4af37;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-top: auto;
+}
+
+.sin-publicaciones {
+    text-align: center;
+    color: #7a7a8c;
+    padding: 40px 0;
+    font-style: italic;
+}
+
+/* RESPONSIVO */
+@media (max-width: 600px) {
+    .creador-info-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-top: -50px;
+        padding: 0 15px;
+    }
+
+    .nombre-tienda-titulo {
+        font-size: 1.5rem;
+        justify-content: center;
+    }
+}
+/* BANNER DE DISEÑO PERSONALIZADO */
+.banner-personalizado {
+    background: linear-gradient(135deg, rgba(25, 20, 12, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    border-radius: 16px;
+    padding: 24px 32px;
+    margin: 30px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.badge-sparkle {
+    color: #d4af37;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+.banner-content h2 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin: 0 0 6px 0;
+}
+
+.banner-content p {
+    color: #aaa;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.destaque-artista {
+    color: #d4af37;
+    font-weight: 600;
+}
+
+.btn-solicitar {
+    background: linear-gradient(135deg, #d4af37 0%, #aa820a 100%);
+    color: #000;
+    font-weight: 700;
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+}
+
+.btn-solicitar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+    background: linear-gradient(135deg, #e5be48 0%, #bb931b 100%);
+}

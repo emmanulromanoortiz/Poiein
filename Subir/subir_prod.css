@@ -1,0 +1,190 @@
+/* --- 1. VARIABLES DINÁMICAS (Temas de Color) --- */
+:root, body.theme-black { 
+    --gold: #d4af37;
+    --dark-panel: #121212;
+    --bg-main: #000000;
+}
+
+body.theme-purple { 
+    --bg-main: #1a0029; 
+    --dark-panel: #2d004d; 
+    --gold: #bc6ff1; 
+}
+
+body.theme-pink { 
+    --bg-main: #29001a; 
+    --dark-panel: #4d002d; 
+    --gold: #ff85a1; 
+}
+
+body.theme-blue { 
+    --bg-main: #001229; 
+    --dark-panel: #002654; 
+    --gold: #48cae4; 
+}
+
+/* --- 2. CONFIGURACIÓN BASE --- */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Poppins', sans-serif; 
+}
+
+body { 
+    background-color: var(--bg-main) !important; 
+    color: white; 
+    height: 100vh; 
+    overflow: hidden; 
+    transition: 0.5s ease;
+}
+
+/* --- 3. ESTRUCTURA DEL EDITOR --- */
+.editor-layout { 
+    display: flex; 
+    height: 100vh; 
+    width: 100%;
+}
+
+/* Barra Izquierda (Selector de Colores) */
+.sidebar-styles {
+    width: 60px;
+    background-color: var(--dark-panel) !important;
+    border-right: 1px solid rgba(212, 175, 55, 0.2);
+    transition: width 0.3s ease;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.sidebar-styles:hover { width: 180px; }
+
+.trigger-zone { 
+    height: 60px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-size: 1.5rem; 
+    cursor: pointer; 
+}
+
+.drawer-content { 
+    padding: 20px; 
+    opacity: 0; 
+    transition: 0.2s; 
+    text-align: center;
+}
+
+.sidebar-styles:hover .drawer-content { opacity: 1; }
+
+.color-grid { display: flex; gap: 10px; justify-content: center; margin-top: 10px; }
+.dot { width: 25px; height: 25px; border-radius: 50%; cursor: pointer; border: 1px solid white; }
+.dot.black { background: #000; }
+.dot.purple { background: #4d004d; }
+.dot.pink { background: #ff85a1; }
+.dot.blue { background: #002654; }
+
+/* Área Central (Previsualización) */
+.canvas-center {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle, rgba(212,175,55,0.05) 0%, rgba(0,0,0,1) 80%);
+}
+
+.preview-box {
+    width: 90%;
+    max-width: 500px;
+    height: 500px;
+    border: 2px dashed var(--gold);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+#mainPreview { 
+    max-width: 100%; 
+    max-height: 100%; 
+    border-radius: 10px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+
+/* Barra Derecha (Formulario) */
+.sidebar-fields {
+    width: 350px;
+    background-color: var(--dark-panel) !important;
+    border-left: 1px solid rgba(212, 175, 55, 0.2);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-header h3 { 
+    color: var(--gold); 
+    margin-bottom: 25px; 
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+}
+
+/* --- 4. CAMPOS DE TEXTO Y BOTONES --- */
+.input-field { margin-bottom: 20px; }
+.input-field label { 
+    color: var(--gold); 
+    display: block; 
+    margin-bottom: 8px; 
+    font-size: 0.8rem; 
+    font-weight: bold;
+}
+
+.input-field input, .input-field textarea {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 8px;
+    color: white;
+    outline: none;
+}
+
+/* Botón Dorado Personalizado (Seleccionar Archivo) */
+.btn-custom-file {
+    display: block;
+    padding: 12px 20px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    border-radius: 50px; /* Forma de cápsula */
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    background: transparent;
+}
+
+.btn-custom-file:hover {
+    background: var(--gold);
+    color: black;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+/* Botón Final (Publicar) */
+.btn-main {
+    margin-top: auto;
+    background: var(--gold);
+    color: black;
+    border: none;
+    padding: 15px;
+    border-radius: 50px; 
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+.btn-main:hover {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+    transform: translateY(-2px);
+}

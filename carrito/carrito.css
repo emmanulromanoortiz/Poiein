@@ -1,0 +1,610 @@
+/* ==========================================
+   POIEIN - CARRITO DE COMPRAS ELEGANTE
+   ========================================== */
+
+:root {
+    --gold: #ffcc00;
+    --gold-hover: #e6b800;
+    --gold-glow: rgba(255, 204, 0, 0.25);
+    --bg-dark: #121216;
+    --bg-card: #1c1c24;
+    --border-dark: #23232a;
+    --red-alert: #e74c3c;
+    --text-muted: #888899;
+}
+
+body {
+    background-color: var(--bg-dark);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #ffffff;
+}
+
+.carrito-container {
+    max-width: 1250px;
+    margin: 40px auto 80px auto;
+    padding: 0 20px;
+}
+
+/* --- ENCABEZADO --- */
+.carrito-header {
+    margin-bottom: 35px;
+    animation: fadeInDown 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.titulo-galeria {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 0 0 8px 0;
+}
+
+.badget-count {
+    background: rgba(255, 204, 0, 0.15);
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    font-size: 0.9rem;
+    padding: 2px 12px;
+    border-radius: 20px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.subtitulo-poiein {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* --- GRID PRINCIPAL --- */
+.carrito-grid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 30px;
+    align-items: start;
+}
+
+/* --- LISTA DE PRODUCTOS --- */
+.lista-productos {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Tarjeta individual de producto */
+.item-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-dark);
+    border-radius: 14px;
+    padding: 18px 22px;
+    display: grid;
+    grid-template-columns: 90px 1.5fr 110px 100px 40px;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    
+    /* Animación de Entrada Escalonada */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: var(--delay, 0s);
+}
+
+.item-card:hover {
+    border-color: rgba(255, 204, 0, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px var(--gold-glow);
+    transform: translateY(-2px);
+}
+
+/* Imagen del Producto */
+.item-img-box {
+    width: 90px;
+    height: 90px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border-dark);
+    background: #0d0d10;
+}
+
+.item-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.item-card:hover .item-img-box img {
+    transform: scale(1.1);
+}
+
+/* Información */
+.autor-tag {
+    font-size: 0.75rem;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.item-titulo {
+    font-size: 1.1rem;
+    margin: 0 0 6px 0;
+    color: #fff;
+    font-weight: 600;
+}
+
+.item-precio-unitario {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* Cantidad (+ / -) */
+.item-cantidad-box {
+    display: flex;
+    align-items: center;
+    background: var(--bg-dark);
+    border: 1px solid var(--border-dark);
+    border-radius: 8px;
+    padding: 4px;
+    justify-content: space-between;
+}
+
+.btn-qty {
+    background: transparent;
+    border: none;
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.btn-qty:hover {
+    background: var(--gold);
+    color: #000;
+}
+
+.qty-num {
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0 8px;
+}
+
+/* Precios Totales de Fila */
+.item-total-col {
+    text-align: right;
+}
+
+.lbl-subtotal-item {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    display: block;
+    text-transform: uppercase;
+}
+
+.item-precio-total {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--gold);
+}
+
+/* Botón Eliminar */
+.btn-eliminar {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-eliminar:hover {
+    color: var(--red-alert);
+    background: rgba(231, 76, 60, 0.12);
+    transform: rotate(10deg) scale(1.15);
+}
+
+/* --- TARJETA DE RESUMEN (ASIDE STICKY) --- */
+.resumen-compra {
+    position: sticky;
+    top: 20px;
+    animation: fadeInRight 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-resumen {
+    background: var(--bg-card);
+    border: 1px solid var(--border-dark);
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.resumen-titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    color: #fff;
+    margin: 0;
+}
+
+.separador-oro {
+    height: 1px;
+    background: linear-gradient(90deg, var(--gold) 0%, rgba(255, 204, 0, 0) 100%);
+    margin: 18px 0;
+    opacity: 0.4;
+}
+
+.resumen-linea {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+    font-size: 0.95rem;
+    color: #ccc;
+}
+
+/* Cupón */
+.cupon-linea {
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.input-cupon {
+    flex: 1;
+    background: var(--bg-dark);
+    border: 1px solid var(--border-dark);
+    padding: 10px 14px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 0.85rem;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.input-cupon:focus {
+    border-color: var(--gold);
+}
+
+.btn-cupon {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-dark);
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-cupon:hover {
+    background: var(--gold);
+    color: #000;
+    border-color: var(--gold);
+}
+
+/* Línea Total */
+.linea-total {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.precio-gold {
+    font-size: 1.6rem;
+    color: var(--gold);
+    font-weight: 800;
+}
+
+/* BOTÓN PROCEDER AL PAGO CON EFECTO GLOW */
+.btn-checkout {
+    width: 100%;
+    margin-top: 22px;
+    padding: 16px;
+    background: var(--gold);
+    border: none;
+    border-radius: 10px;
+    color: #000;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px var(--gold-glow);
+}
+
+.btn-checkout:hover {
+    background: var(--gold-hover);
+    box-shadow: 0 0 30px rgba(255, 204, 0, 0.5);
+    transform: translateY(-2px);
+}
+
+.btn-checkout:active {
+    transform: scale(0.98);
+}
+
+.btn-flecha {
+    transition: transform 0.3s ease;
+}
+
+.btn-checkout:hover .btn-flecha {
+    transform: translateX(6px);
+}
+
+/* Garantías y Seguridad */
+.garantia-poiein {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+.metodos-pago {
+    margin-top: 8px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    opacity: 0.5;
+}
+
+/* --- ESTADO VACÍO --- */
+.carrito-vacio-box {
+    text-align: center;
+    padding: 80px 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-dark);
+    border-radius: 16px;
+    max-width: 600px;
+    margin: 40px auto;
+    animation: zoomIn 0.5s ease;
+}
+
+.animacion-vacio {
+    margin-bottom: 20px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.carrito-vacio-box h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.carrito-vacio-box p {
+    color: var(--text-muted);
+    margin-bottom: 25px;
+}
+
+.btn-explorar {
+    display: inline-block;
+    background: var(--gold);
+    color: #000;
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s;
+}
+
+.btn-explorar:hover {
+    box-shadow: 0 0 20px var(--gold-glow);
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   KEYFRAMES DE ANIMACIÓN
+   ========================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* ==========================================
+   RESPONSIVO
+   ========================================== */
+@media (max-width: 950px) {
+    .carrito-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .item-card {
+        grid-template-columns: 80px 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 12px;
+    }
+
+    .item-total-col {
+        text-align: left;
+    }
+
+    .btn-eliminar {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+}
+
+/* ==========================================
+   MODAL DE CONFIRMACIÓN DE ELIMINACIÓN
+   ========================================== */
+.modal-poiein-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px); /* EFECTO BORROSO ELEGANTE */
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estado Activo (SIEMPRE VA DEBAJO DE .modal-poiein-overlay) */
+.modal-poiein-overlay.is-visible {
+    display: flex;
+}
+
+.modal-poiein-card {
+    background: #1a002c;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #d4af37;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    animation: modalEntrada 0.25s ease-out forwards;
+}
+
+.modal-poiein-close {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.modal-poiein-close:hover {
+    color: #d4af37;
+}
+
+.modal-poiein-icono {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.modal-poiein-titulo {
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
+
+.modal-poiein-mensaje {
+    color: #ccc;
+    font-size: 0.95rem;
+    margin-bottom: 22px;
+}
+
+.modal-poiein-acciones {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.btn-cancelar-modal {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid #555;
+    background: transparent;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-cancelar-modal:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #888;
+}
+
+.btn-eliminar-modal {
+    padding: 10px 22px;
+    border-radius: 8px;
+    border: none;
+    background: #e74c3c;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.btn-eliminar-modal:hover {
+    background: #c0392b;
+}
+
+.btn-eliminar-modal:active {
+    transform: scale(0.97);
+}
+
+/* Animación de entrada suave */
+@keyframes modalEntrada {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* FORZAR VISIBILIDAD DE LA MODAL CON MAJESTUOSA ESPECIFICIDAD */
+div#modal-confirmar-eliminar.is-visible,
+div.modal-poiein-overlay.is-visible {
+    display: flex !important;
+}

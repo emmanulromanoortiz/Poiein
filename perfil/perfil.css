@@ -1,0 +1,334 @@
+body {
+    background-color: #000;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+.contenedor-perfil {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.portada-seccion {
+    height: 280px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 0 0 25px 25px;
+    background-color: #111;
+}
+
+.btn-editar-portada {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.8);
+    color: #d4af37;
+    padding: 8px 20px;
+    border-radius: 30px;
+    border: 1px solid #d4af37;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.bloque-usuario {
+    display: flex;
+    align-items: flex-end;
+    gap: 30px;
+    padding: 0 40px;
+    margin-top: -80px;
+}
+
+.avatar-area { 
+    position: relative; 
+}
+
+.img-avatar {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 6px solid #000;
+    object-fit: cover;
+    background: #1a1a1a;
+}
+
+.btn-editar-avatar {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: #d4af37;
+    color: black;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.saludo-personal {
+    color: #d4af37;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.marca-titulo {
+    margin: 5px 0;
+    font-size: 2.6rem;
+}
+
+.redes-lista { 
+    display: flex; 
+    gap: 10px; 
+    margin-top: 15px; 
+}
+
+.pildora {
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    background: #0a0a0a;
+    border: 1px solid #333;
+}
+
+.pildora.spot { border-color: #1DB954; color: #1DB954; }
+.pildora.insta { border-color: #E1306C; color: #E1306C; }
+
+.paneles-informativos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    padding: 50px 40px;
+}
+
+.tarjeta-profesional {
+    background: #080808;
+    border: 1px solid #1a1a1a;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.tarjeta-profesional h3 {
+    color: #d4af37;
+    margin-top: 0;
+    border-bottom: 1px solid #222;
+    padding-bottom: 15px;
+}
+
+.tarjeta-profesional ul { 
+    list-style: none; 
+    padding: 0; 
+}
+
+.tarjeta-profesional li {
+    padding: 12px 0;
+    border-bottom: 1px solid #111;
+    color: #888;
+    cursor: pointer;
+}
+
+.txt-rojo { color: #ff4444 !important; }
+
+.input-oculto { display: none; }
+
+/* ==========================================
+   NUEVOS ESTILOS: ENCARGOS & REDES SOCIALES
+   ========================================== */
+
+.titulo-dorado {
+    color: #d4af37;
+}
+
+.txt-subtitulo {
+    color: #888;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.espacio-top {
+    margin-top: 30px !important;
+}
+
+.link-logout {
+    color: inherit;
+    text-decoration: none;
+}
+
+.input-red-box {
+    margin-bottom: 15px;
+}
+
+.lbl-spotify {
+    display: block;
+    color: #1DB954;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+}
+
+.lbl-instagram {
+    display: block;
+    color: #E1306C;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+}
+
+.input-red {
+    width: 100%;
+    background: #111;
+    border: 1px solid #222;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.input-red:focus {
+    outline: none;
+    border-color: #d4af37;
+}
+
+.btn-actualizar-redes {
+    background: #d4af37;
+    color: black;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.3s ease;
+}
+
+.btn-actualizar-redes:hover {
+    background: #e5be48;
+}
+
+/* INTERRUPTOR SWITCH (ENCARGOS) */
+.switch-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 12px;
+    padding: 12px 18px;
+    margin-top: 10px;
+}
+
+.txt-estado-custom {
+    color: #fff;
+    font-size: 0.88rem;
+    font-weight: 500;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 46px;
+    height: 24px;
+}
+
+.switch input { 
+    opacity: 0; 
+    width: 0; 
+    height: 0; 
+}
+
+.slider {
+    position: absolute; 
+    cursor: pointer; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0;
+    background-color: #222; 
+    transition: .4s; 
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute; 
+    content: ""; 
+    height: 18px; 
+    width: 18px; 
+    left: 3px; 
+    bottom: 3px;
+    background-color: white; 
+    transition: .4s; 
+    border-radius: 50%;
+}
+
+input:checked + .slider { 
+    background-color: #d4af37; 
+}
+
+input:checked + .slider:before { 
+    transform: translateX(22px); 
+}
+
+/* --- Estilos para Encargos Personalizados en el Perfil --- */
+.grid-encargos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.card-encargo {
+    background: #111;
+    border: 1px solid #222;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.card-encargo img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+.card-encargo p {
+    font-size: 0.8rem;
+    color: #aaa;
+    margin: 4px 0;
+}
+
+/* --- Estilos para Encargos Personalizados en el Perfil --- */
+.grid-encargos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.card-encargo {
+    background: #111;
+    border: 1px solid #222;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.card-encargo img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+.card-encargo p {
+    font-size: 0.8rem;
+    color: #aaa;
+    margin: 4px 0;
+}

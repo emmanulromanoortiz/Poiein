@@ -1,0 +1,61 @@
+/* --- 1. CONFIGURACIÓN GENERAL --- */
+body {
+    margin: 0; 
+    padding: 0; 
+    color: #f5f5f5; 
+    min-height: 100vh;
+    font-family: 'Playfair Display', Georgia, serif; 
+    background-color: #1a0029; 
+    background-image: 
+        radial-gradient(circle at center, #350052 0%, #11001c 100%),
+        url("https://www.transparenttextures.com/patterns/asfalt-dark.png"); 
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+}
+
+/* --- 2. SECCIÓN COMUNIDAD (DORADA Y CENTRADA) --- */
+.hero-section {
+    padding: 100px 20px 40px;
+    text-align: center; /* Centra el título y el párrafo */
+}
+
+.hero-section h1 {
+    color: #d4af37; /* Título Dorado */
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+.hero-section p {
+    color: #d4af37; /* Párrafo Dorado */
+    font-style: italic;
+    font-size: 1.3rem;
+    opacity: 0.9;
+}
+
+/* --- 3. CONTENIDO TEMPORAL (PLACEHOLDER) --- */
+.comunidad-placeholder {
+    display: flex;
+    justify-content: center;
+    padding: 20px 5%;
+}
+
+.placeholder-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px dashed rgba(212, 175, 55, 0.4); /* Línea discontinua elegante */
+    padding: 50px;
+    border-radius: 30px;
+    color: #d4af37;
+    font-size: 1.1rem;
+    max-width: 700px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    transition: 0.4s ease;
+}
+
+.placeholder-card:hover {
+    border-style: solid; /* Cambia a línea continua al pasar el mouse */
+    border-color: #d4af37;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.1);
+}

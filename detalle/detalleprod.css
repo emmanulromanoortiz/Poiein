@@ -1,0 +1,668 @@
+/* ==========================================
+   HOJA DE ESTILOS DE DETALLE DE PRODUCTO
+   ========================================== */
+
+/* CONTENEDOR PRINCIPAL Y MAQUETACIÓN EN 3 COLUMNAS */
+.container-detalle {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.columna-galeria {
+    flex: 1 1 350px;
+}
+
+.galeria-seccion {
+    display: flex;
+    gap: 15px;
+}
+
+.miniaturas {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mini-foto {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.mini-foto.activa {
+    border-color: #d4af37;
+}
+
+.mini-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.imagen-principal {
+    flex: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #0f0f15;
+}
+
+.imagen-principal img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* TARJETA CREADOR */
+.tarjeta-creador-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 15px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 12px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.avatar-creador-mini {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.info-creador-mini {
+    display: flex;
+    flex-direction: column;
+}
+
+.lbl-creador {
+    font-size: 11px;
+    color: #888;
+    text-transform: uppercase;
+}
+
+.nombre-creador-txt {
+    color: #d4af37;
+    font-weight: 600;
+}
+
+/* SECCIÓN INFORMACIÓN CENTRAL */
+.info-seccion {
+    flex: 1 1 300px;
+    color: #fff;
+}
+
+.estado-ventas {
+    font-size: 12px;
+    color: #888;
+}
+
+.producto-titulo {
+    font-size: 28px;
+    margin: 10px 0;
+    color: #fff;
+}
+
+.precio-entero {
+    font-size: 32px;
+    font-weight: bold;
+    color: #d4af37;
+}
+
+.iva-aviso {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.descripcion-contenedor h3 {
+    color: #d4af37;
+    margin-bottom: 10px;
+}
+
+.descripcion-contenedor p {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+/* COLUMNA DERECHA: TARJETA DE COMPRA */
+.compra-seccion {
+    flex: 1 1 250px;
+}
+
+.tarjeta-compra {
+    background: #120919;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.envio-info, .stock-disponible {
+    color: #2ecc71;
+    font-size: 13px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.btn-comprar, .btn-carrito, .btn-deseos {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-comprar {
+    background: #d4af37;
+    color: #0d0614;
+}
+
+.btn-comprar:hover {
+    background: #e6c247;
+}
+
+.btn-carrito {
+    background: transparent;
+    border: 1px solid #d4af37;
+    color: #d4af37;
+}
+
+.btn-carrito:hover {
+    background: rgba(212, 175, 55, 0.1);
+}
+
+.btn-deseos {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-volver-link {
+    display: block;
+    text-align: center;
+    color: #888;
+    text-decoration: none;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.btn-volver-link:hover {
+    color: #d4af37;
+}
+
+/* SECCIÓN RESEÑAS Y COMENTARIOS */
+.contenedor-resenas {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    color: #fff;
+}
+
+.titulo-resenas {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #d4af37;
+}
+
+.grid-resenas {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.resumen-estrellas {
+    background: #120919;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+    flex: 1 1 200px;
+}
+
+.promedio-num {
+    font-size: 36px;
+    font-weight: bold;
+    color: #d4af37;
+}
+
+.estrellas-rating {
+    color: #d4af37;
+    margin: 5px 0;
+}
+
+.total-votos {
+    font-size: 12px;
+    color: #888;
+}
+
+.box-comentar {
+    flex: 2 1 400px;
+    background: #120919;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.rating-stars {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 5px;
+    margin: 10px 0;
+}
+
+.rating-stars input {
+    display: none;
+}
+
+.rating-stars label {
+    font-size: 20px;
+    color: #444;
+    cursor: pointer;
+}
+
+.rating-stars input:checked ~ label,
+.rating-stars label:hover,
+.rating-stars label:hover ~ label {
+    color: #d4af37;
+}
+
+.textarea-comentario {
+    width: 100%;
+    min-height: 80px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+    color: #fff;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+.btn-publicar-comentario {
+    background: #d4af37;
+    color: #0d0614;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.tarjeta-comentario {
+    background: #120919;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 10px;
+}
+
+.header-comentario {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.autor-comentario {
+    color: #d4af37;
+    font-weight: 600;
+}
+
+.estrellas-comentario {
+    color: #d4af37;
+}
+
+.texto-comentario {
+    color: #ddd;
+    margin: 5px 0;
+}
+
+.fecha-comentario {
+    font-size: 11px;
+    color: #666;
+}
+
+/* ==========================================
+   MODAL POIEIN (NOTIFICACIÓN FLOTANTE CENTRADA)
+   ========================================== */
+.modal-poiein-overlay {
+    display: none;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(10, 5, 18, 0.85) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    z-index: 999999 !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.modal-poiein-card {
+    background: #120919 !important;
+    border: 1px solid rgba(212, 175, 55, 0.4) !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9), 0 0 25px rgba(212, 175, 55, 0.2) !important;
+    border-radius: 24px !important;
+    padding: 35px 30px !important;
+    width: 90% !important;
+    max-width: 420px !important;
+    text-align: center !important;
+    position: relative !important;
+    margin: auto !important;
+    box-sizing: border-box !important;
+}
+
+.modal-poiein-close {
+    position: absolute !important;
+    top: 15px !important;
+    right: 20px !important;
+    background: none !important;
+    border: none !important;
+    color: rgba(255, 255, 255, 0.5) !important;
+    font-size: 24px !important;
+    cursor: pointer !important;
+}
+
+.modal-poiein-close:hover {
+    color: #d4af37 !important;
+}
+
+.modal-poiein-icono {
+    font-size: 38px !important;
+    margin-bottom: 10px !important;
+    display: block !important;
+}
+
+.modal-poiein-titulo {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    color: #d4af37 !important;
+    font-size: 22px !important;
+    margin-bottom: 12px !important;
+}
+
+.modal-poiein-mensaje {
+    color: #d1d1d1 !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 25px !important;
+}
+
+.modal-poiein-acciones {
+    display: flex !important;
+    gap: 12px !important;
+    justify-content: center !important;
+}
+
+.btn-poiein-modal {
+    background: transparent !important;
+    border: 1px solid #d4af37 !important;
+    color: #d4af37 !important;
+    padding: 12px 28px !important;
+    border-radius: 30px !important;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+}
+
+.btn-poiein-modal:hover {
+    background: #d4af37 !important;
+    color: #0d0614 !important;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4) !important;
+}
+
+.btn-poiein-secundario {
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    color: #aaa !important;
+}
+
+.btn-poiein-secundario:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #fff !important;
+}
+
+/* ==========================================================================
+   SISTEMA DE COMENTARIOS, ACCIONES Y REPORTES
+   ========================================================================== */
+
+/* Menú de 3 puntos en comentarios */
+.opciones-comentario {
+    position: relative;
+    margin-left: auto;
+}
+
+.btn-tres-puntos {
+    background: none;
+    border: none;
+    color: #a1a1aa;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 2px 8px;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-tres-puntos:hover {
+    background: #27272a;
+    color: #fff;
+}
+
+.dropdown-menu-comentario {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: #18181b;
+    border: 1px solid #27272a;
+    border-radius: 8px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    min-width: 140px;
+    overflow: hidden;
+}
+
+.dropdown-menu-comentario.show {
+    display: block;
+}
+
+.item-dropdown {
+    width: 100%;
+    padding: 10px 14px;
+    background: none;
+    border: none;
+    color: #d4d4d8;
+    font-size: 0.85rem;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+}
+
+.item-dropdown:hover {
+    background: #27272a;
+    color: #fff;
+}
+
+.item-dropdown.eliminar:hover {
+    background: #450a0a;
+    color: #f87171;
+}
+
+/* Barra de acciones del comentario (Likes, Dislikes, Responder) */
+.acciones-comentario {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 12px;
+    font-size: 0.85rem;
+}
+
+.btn-accion-coment {
+    background: none;
+    border: none;
+    color: #a1a1aa;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+}
+
+.btn-accion-coment:hover {
+    color: #f43f5e;
+}
+
+.btn-accion-coment.liked {
+    color: #22c55e;
+}
+
+.btn-accion-coment.disliked {
+    color: #ef4444;
+}
+
+.btn-reportar-link {
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 0.85rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 10px;
+    transition: color 0.2s;
+}
+
+.btn-reportar-link:hover { color: #ff4d4d; }
+
+/* Formulario de Respuesta */
+.box-respuesta-form {
+    display: none;
+    margin-top: 12px;
+    padding-left: 16px;
+    border-left: 2px solid #27272a;
+}
+
+.box-respuesta-form.show {
+    display: block;
+}
+
+/* Estilos de Modal de Reporte */
+.modal-reporte-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.75);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-reporte-card {
+    background: #18181b;
+    border: 1px solid #27272a;
+    border-radius: 12px;
+    padding: 24px;
+    width: 90%;
+    max-width: 420px;
+    color: #fff;
+}
+
+.modal-reporte-card select, .modal-reporte-card textarea {
+    width: 100%;
+    background: #09090b;
+    border: 1px solid #27272a;
+    color: #fff;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 8px;
+    margin-bottom: 14px;
+}
+/* Estilos para el contenedor de respuestas anidadas */
+.lista-respuestas {
+    margin-top: 12px;
+    padding-left: 20px;
+    border-left: 2px solid rgba(229, 182, 73, 0.25);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tarjeta-respuesta {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    padding: 12px 14px;
+}
+
+/* Formulario de Respuesta y Botones Estilizados */
+.box-respuesta-form {
+    display: none;
+    margin-top: 14px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.box-respuesta-form.show {
+    display: block;
+}
+
+.acciones-form-respuesta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn-cancelar-respuesta {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e4e4e7;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+}
+
+.btn-cancelar-respuesta:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #e5b649;
+    color: #e5b649;
+}
